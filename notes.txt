@@ -1,0 +1,48 @@
+rails new NomadBeerCo --database=postgresql --api
+
+create-react-app NomadBeerCo-frontend
+
+//rails g resource style name:string
+rails g resource Brewery name:string city:string state:string image_url:string description:text
+rails g resource Beer brewery_id:integer name:string style:string rating:float description:text image_url:string thumbs_up:string
+
+rails db:create && rails db:migrate
+
+beer
+  //belongs_to :style
+  belongs_to :brewery
+
+brewery
+  has_many :beers
+
+//style
+  //has_many :beers
+
+Home page:
+	-enter your zip code and a style of beer to try
+	-will select one from random for you to try, button to see all
+	-all beers component will display list of beers in that state with rating of 3 or higher in your state
+	-like if you’ve tried it and liked it
+	-thumbs down if you aren’t interested and take it off the list
+	-add a beer with style, location, image, rating
+
+
+npm install
+npm install redux --save
+npm install react-redux --save
+npm install react-router-dom --save
+npm install redux-thunk --save
+npm install react-bootstrap bootstrap
+
+//index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import App from './App';
+import './index.css'
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
