@@ -17,6 +17,9 @@ class BeerInput extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.addBeer(this.state)
+    this.setState({
+      name: '',
+    })
   }
 
   render(){
@@ -35,3 +38,9 @@ class BeerInput extends Component {
 
 
 export default connect(null, {addBeer})(BeerInput)
+
+
+// <label for="brewery">Choose a Brewery:</label>
+//   <select name="brewery" id="brewery">
+//     {props.breweries.map(brewery => <option value={brewery.name}>{brewery.name}</option>)}
+//   </select>

@@ -18,8 +18,29 @@ brewery
 //style
   //has_many :beers
 
-Home page:
-	-enter your zip code and a style of beer to try
+HEADER: navbar with link to all home, beers, all breweries
+	HOME PAGE:
+  form with:
+    -select dropdown for style of beer
+    -input to enter your zip code and a style of beer to try
+    -submit button to try something new
+    -see all will display list of all beers within that style with links to card
+
+  BEERS LINK:
+  -display all beers
+  -each beer links to beer card
+  -select dropdown for style of beer
+  -search by state
+
+  BREWERIES LINK:
+    -display all breweries
+    -each brewery links to brewery card, lists beers with links to beer cards
+    -filter by state
+
+  Submit will display a beer card for a randomly selected beer of that style above a rating of 3.75
+
+
+
 	-will select one from random for you to try, button to see all
 	-all beers component will display list of beers in that state with rating of 3 or higher in your state
 	-like if you’ve tried it and liked it

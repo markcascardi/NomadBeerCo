@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import BeerList from '../components/BeerList'
 import BeerInput from '../components/BeerInput'
-import { fetchBeers } from '../actions/fetchBeers'
 import { connect } from 'react-redux'
 
 class BeersContainer extends Component {
-
-  componentDidMount(){
-    this.props.fetchBeers()
-  }
 
   render() {
     return(
@@ -26,4 +21,4 @@ const mapSTP = (state) => {
   }
 }
 
-export default connect(mapSTP, { fetchBeers })(BeersContainer)
+export default connect(mapSTP)(BeersContainer)
