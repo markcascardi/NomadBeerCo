@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.color-nav {
+  background-color: #c3b192
+}
+
+.body-color {
+  background-color: #F0F0F0
+}
+
+.button {
+  color: #404040;
+  background-color: #FF8C00;
+  border-color: #FF8C00;
+}
+
+.beer-avatar {
+  justify-self: center;
+  height: 200px;
+  width: 140px;
+}
+  /*
+  .btn-primary:hover {
+    color: #404040;
+    background-color: #DA70D6;
+    border-color: #DA70D6;
+  }
+
+  .a {
+    solor: #404040
+  } */

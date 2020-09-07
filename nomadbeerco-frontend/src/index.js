@@ -5,8 +5,8 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import beerReducer from './reducers/oneReducer'
 import { BrowserRouter as Router } from 'react-router-dom';
-import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 
 import App from './App';
 

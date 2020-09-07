@@ -7,8 +7,8 @@ import Button from 'react-bootstrap/Navbar'
 
 const Navigation = () => {
   return(
-    <Navbar bg="primary" variant="dark">
-      <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+    <Navbar className="color-nav" variant="light">
+      <Navbar.Brand href="/">Nomad Beer Co</Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/beers">Beers</Nav.Link>

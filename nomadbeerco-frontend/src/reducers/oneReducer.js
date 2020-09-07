@@ -16,6 +16,15 @@
         ...state,
         breweries: action.payload
       }
+    case 'UPDATE_THUMBS':
+      let beerToLike = state.beers.map(beer => {
+        if (beer.id === action.payload.id) {
+          return action.payload
+        } else {
+          return beer
+        }
+      })
+      return {...state, beers: beerToLike}
     default:
       return state;
   }

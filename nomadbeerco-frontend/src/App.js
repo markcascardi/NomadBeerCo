@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchBreweries } from './actions/fetchBreweries'
 import { fetchBeers } from './actions/fetchBeers'
+import BeerFinderForm from './components/BeerFinderForm'
 import BeersContainer from './containers/BeersContainer'
 import BreweriesContainer from './containers/BreweriesContainer'
 import BeerCard from './components/BeerCard'
@@ -21,6 +22,9 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation />
+        <Route exact path="/">
+          <BeerFinderForm />
+        </Route>
         <Route exact path="/beers">
           <BeersContainer />
         </Route>
