@@ -9,9 +9,6 @@ import { useHistory } from 'react-router-dom'
 export default function BreweryCard(props){
   const [isOpen, setIsOpen] = React.useState(true);
   const history = useHistory()
-  // const showModal = () => {
-  //   setIsOpen(true);
-  // };
 
   const hideModal = () => {
     setIsOpen(false);
@@ -58,20 +55,3 @@ export default function BreweryCard(props){
       return <div>loading...</div>
   }
 }
-
-// function BreweryModal() {
-//   const [modalShow, setModalShow] = React.useState(false);
-//
-//   return (
-//     <>
-//       <Button variant="primary" onClick={() => setModalShow(true)}>
-//         Launch vertically centered modal
-//       </Button>
-//
-//       <BreweryCard
-//         show={modalShow}
-//         onHide={() => setModalShow(false)}
-//       />
-//     </>
-//   );
-// }

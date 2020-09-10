@@ -1,18 +1,12 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-// import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
-// import BeerFinderForm from './BeerFinderForm'
 
 export default function BeerModal(props){
   const [isOpen, setIsOpen] = React.useState(true);
   const history = useHistory()
 
-  // const showModal = () => {
-  //   setIsOpen(true);
-  // };
-  //
   const hideModal = () => {
     setIsOpen(false);
     history.push(`/beers`)
