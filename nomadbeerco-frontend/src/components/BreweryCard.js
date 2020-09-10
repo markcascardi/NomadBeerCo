@@ -3,22 +3,23 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
-import { withRouter } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+
 
 export default function BreweryCard(props){
   const [isOpen, setIsOpen] = React.useState(true);
-
+  const history = useHistory()
   // const showModal = () => {
   //   setIsOpen(true);
   // };
 
   const hideModal = () => {
     setIsOpen(false);
-
+    history.push(`/breweries`)
   };
 
   let id = parseInt(props.match.params.id)
-  let brewery = props.allBreweries.find(brewery => brewery.id === id )
+  let brewery = props.breweries.find(brewery => brewery.id === id )
     if (brewery){
       return (
         <div>
@@ -29,11 +30,10 @@ export default function BreweryCard(props){
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
-            onClick={() => this.props.history.goBack()}
           >
             <Modal.Header closeButton>
               <Modal.Title id="contained-modal-title-vcenter">
-                <img src={brewery.image_url} />&nbsp;&nbsp;&nbsp;
+                <img src={brewery.image_url} alt="beer"/>&nbsp;&nbsp;&nbsp;
                 {brewery.name}
               </Modal.Title>
             </Modal.Header>
@@ -42,10 +42,10 @@ export default function BreweryCard(props){
                 {brewery.address}<br/>
                 {brewery.city}, {brewery.state} {brewery.zip_code}
               </p>
-                <ListGroupItem>Beer Name   ::   Style   ::   Rating</ListGroupItem>
+                <ListGroupItem><strong>Beer Name   ::   Style   ::   Rating</strong></ListGroupItem>
 
                 {brewery.beers.map(beer =>
-                  <ListGroupItem><Link to={`/beers/${beer.id}`}>{beer.name}</Link>:: {beer.style} :: {beer.rating}</ListGroupItem>
+                  <ListGroupItem key={beer.id}><Link to={`/beers/${beer.id}`}>{beer.name}</Link> :: {beer.style} :: {beer.rating}</ListGroupItem>
                 )}
             </Modal.Body>
             <Modal.Footer>

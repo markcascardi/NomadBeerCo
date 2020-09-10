@@ -32,7 +32,7 @@ class App extends Component {
           <BreweriesContainer />
         </Route>
         <Route exact path="/beers/:id" render={(routerProps) => <BeerCard {...routerProps} allBeers={this.props.beers}/>}/>
-        <Route exact path="/breweries/:id" render={(routerProps) => <BreweryCard {...routerProps} allBreweries={this.props.breweries}/>}/>
+        <Route exact path="/breweries/:id" render={(routerProps) => <BreweryCard {...routerProps} breweries={this.props.breweries}/>}/>
       </div>
     );
   }

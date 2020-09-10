@@ -12,8 +12,8 @@ export default function BeerCard(props){
       if (beer){
         return (
           <div>
-            <Card style={{ width: '25rem' }}>
-              <Card.Img variant="top" src={`${beer.image_url}`} />
+            <Card style={{ width: '25rem' }} className='beercard'>
+              <Card.Img variant="top" src={`${beer.image_url}`}/>
               <Card.Body>
                 <Card.Title>{beer.name}</Card.Title>
                 <Card.Text>

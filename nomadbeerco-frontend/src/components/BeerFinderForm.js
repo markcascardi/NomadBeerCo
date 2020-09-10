@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import BeerCard from './BeerCard'
-// import FormControl from 'react-bootstrap/FormControl'
-// import FormGroup from 'react-bootstrap/FormGroup'
-// import FormLabel from 'react-bootstrap/FormLabel'
+import BeerModal from './BeerModal'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
@@ -38,36 +35,40 @@ class BeerFinderForm extends Component {
     )
   }
 
+  beerSelecterForm = () => {
+    return (
+      <Form onSubmit={this.handleOnSubmit}>
+       <Form.Group>
+         <Row>
+           <Col>
+             <Form.Control value={this.state.style} as="select" name="style" onChange={this.handleOnChange}>
+               <option>Select a Style</option>
+               {this.props.beers.map(beer => beer.style)
+                 .filter((value, index, self) => self.indexOf(value) === index).map(s => <option value={s} key={s}>{s}</option>)}
+             </Form.Control>
+           </Col>
+           <Col>
+             <Form.Control value={this.state.state} as="select" name="st" onChange={this.handleOnChange}>
+               <option>Select a Location</option>
+               {this.props.beers.map(beer => beer.brewery.state)
+                 .filter((value, index, self) => self.indexOf(value) === index).map(s => <option value={s} key={s}>{s}</option>)}
+             </Form.Control>
+           </Col>
+         </Row>
+         <br/>
+       </Form.Group>
+       <Button className="button" variant="primary" type="submit">
+         Cheers!
+       </Button>
+      </Form>
+   )
+ }
+
   render() {
     return(
       <div>
-      {this.state.beer !== ''} ? <Beer beer={this.state.beer} /> :
-        <p>Find yourself a new favorite beer</p>
-        <Form onSubmit={this.handleOnSubmit}>
-          <Form.Group>
-            <Row>
-              <Col>
-                <Form.Control value={this.state.style} as="select" name="style" onChange={this.handleOnChange}>
-                <Form.Label>Example select</Form.Label>
-                  <option>Select a Style</option>
-                  {this.props.beers.map(beer => beer.style)
-                    .filter((value, index, self) => self.indexOf(value) === index).map(s => <option value={s} key={s}>{s}</option>)}
-                </Form.Control>
-              </Col>
-              <Col>
-                <Form.Control value={this.state.state} as="select" name="st" onChange={this.handleOnChange}>
-                  <option>Select a Location</option>
-                  {this.props.beers.map(beer => beer.brewery.state)
-                    .filter((value, index, self) => self.indexOf(value) === index).map(s => <option value={s} key={s}>{s}</option>)}
-                </Form.Control>
-              </Col>
-            </Row>
-            <br/>
-          </Form.Group>
-            <Button className="button" variant="primary" type="submit">
-              Cheers!
-            </Button>
-        </Form>
+      asfd
+        {this.state.beer !== '' ? <BeerModal beer={this.state.beer} /> : this.beerSelecterForm()}
       </div>
     )
   }
