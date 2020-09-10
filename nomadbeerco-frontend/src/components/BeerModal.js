@@ -15,8 +15,7 @@ export default function BeerModal(props){
   //
   const hideModal = () => {
     setIsOpen(false);
-    history.push(`/home`)
-    console.log("take me to slash")
+    history.push(`/beers`)
   };
 
   let beer = props.beer

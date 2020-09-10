@@ -28,7 +28,7 @@ export default function BeerCard(props){
               </ListGroup>
               <Card.Footer>
                 {(beer.thumbs_up !== "or")
-                  ? <mediu>Your thoughts on this beer: {beer.thumbs_up}</mediu>
+                  ? <medium>Your thoughts on this beer: {beer.thumbs_up}</medium>
                   : <small>I'd put a link to "buy now" if it was allowed!</small>
                 }
               </Card.Footer>

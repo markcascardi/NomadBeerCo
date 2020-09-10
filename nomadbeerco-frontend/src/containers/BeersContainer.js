@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import BeerList from '../components/BeerList'
-import BeerInput from '../components/BeerInput'
 import { connect } from 'react-redux'
 
 class BeersContainer extends Component {
@@ -9,7 +8,6 @@ class BeersContainer extends Component {
     return(
       <div>
       <BeerList beers={this.props.beers}/>
-      <BeerInput />
       </div>
     )
   }

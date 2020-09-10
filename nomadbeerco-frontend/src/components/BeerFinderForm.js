@@ -29,7 +29,7 @@ class BeerFinderForm extends Component {
       beer: randomBeer
     })
     console.log(this.state.beer.name)
-    console.log("rando beer", randomBeer.name)
+    console.log("a random beer", randomBeer.name)
     return(
       randomBeer
     )
@@ -37,7 +37,7 @@ class BeerFinderForm extends Component {
 
   beerSelecterForm = () => {
     return (
-      <Form onSubmit={this.handleOnSubmit}>
+      <Form onSubmit={this.handleOnSubmit} className="form-box-finder">
        <Form.Group>
          <Row>
            <Col>
@@ -55,7 +55,6 @@ class BeerFinderForm extends Component {
              </Form.Control>
            </Col>
          </Row>
-         <br/>
        </Form.Group>
        <Button className="button" variant="primary" type="submit">
          Cheers!
@@ -67,7 +66,6 @@ class BeerFinderForm extends Component {
   render() {
     return(
       <div>
-      asfd
         {this.state.beer !== '' ? <BeerModal beer={this.state.beer} /> : this.beerSelecterForm()}
       </div>
     )

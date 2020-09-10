@@ -10,9 +10,9 @@ const Navigation = () => {
     <Navbar className="color-nav" variant="light">
       <Navbar.Brand href="/">Nomad Beer Co</Navbar.Brand>
       <Nav className="mr-auto">
-        <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/beers">Beers</Nav.Link>
         <Nav.Link href="/breweries">Breweries</Nav.Link>
+        <Nav.Link href="/add-a-beer">Add a Beer</Nav.Link>
       </Nav>
       <Form inline>
         <FormControl type="text" placeholder="Search" className="mr-sm-2" />

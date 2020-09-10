@@ -36,6 +36,25 @@ code {
   margin-left: auto;
   margin-right: auto;
 }
+
+.form-box {
+  padding: 10px;
+  margin: auto;
+  width: 25%;
+}
+
+.form-box-finder {
+  padding: 10px;
+  margin: auto;
+  width: 40%;
+}
+
+.beer-list-cards {
+  padding: 10px;
+}
+
+
+
   /*
   .btn-primary:hover {
     color: #404040;

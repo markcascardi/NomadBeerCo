@@ -5,6 +5,7 @@ import { fetchBeers } from './actions/fetchBeers'
 import BeerFinderForm from './components/BeerFinderForm'
 import BeersContainer from './containers/BeersContainer'
 import BreweriesContainer from './containers/BreweriesContainer'
+import BeerInput from './components/BeerInput'
 import BeerCard from './components/BeerCard'
 import BreweryCard from './components/BreweryCard'
 import Navigation from './components/Navigation'
@@ -31,6 +32,7 @@ class App extends Component {
         <Route exact path="/breweries">
           <BreweriesContainer />
         </Route>
+        <Route exact path="/add-a-beer" render={(routerProps) => <BeerInput {...routerProps} breweries={this.props.breweries} allBeers={this.props.beers}/>}/>
         <Route exact path="/beers/:id" render={(routerProps) => <BeerCard {...routerProps} allBeers={this.props.beers}/>}/>
         <Route exact path="/breweries/:id" render={(routerProps) => <BreweryCard {...routerProps} breweries={this.props.breweries}/>}/>
       </div>

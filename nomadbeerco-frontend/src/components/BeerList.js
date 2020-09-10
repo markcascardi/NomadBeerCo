@@ -26,7 +26,7 @@ class BeerList extends Component {
   render() {
     return(
       <div>
-        <CardColumns>
+        <CardColumns className="beer-list-cards">
         {this.props.beers.map(beer =>
           <Card key={beer.id} border="dark">
             <Card.Img className="beer-avatar" variant="top" src={`${beer.image_url}`} fluid/>
