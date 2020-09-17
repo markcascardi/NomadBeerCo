@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { addBeer } from '../actions/addBeer'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+// import Col from 'react-bootstrap/Col'
+// import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
@@ -21,7 +21,9 @@ class BeerInput extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    console.log('a')
     this.props.addBeer(this.state)
+    console.log('g');
     this.setState({
       name: '',
       brewery_id: '',

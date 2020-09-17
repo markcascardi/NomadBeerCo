@@ -1,5 +1,7 @@
 export const addBeer = (data) => {
+  console.log('b')
   return (dispatch) => {
+    console.log('c')
     fetch("http://localhost:3000/beers", {
       method: "POST",
       headers: {
@@ -9,7 +11,11 @@ export const addBeer = (data) => {
       body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(beer => dispatch({type: 'ADD_BEER', payload: beer}))
-    console.log(data)
+    .then(beer => {
+      console.log('d')
+      return dispatch({type: 'ADD_BEER', payload: beer})
+    })
+    console.log('e')
   }
+  console.log('f')
 }
